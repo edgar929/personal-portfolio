@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>edgar personal site</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <!-- css links -->
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- fontawesome cdn -->
+  <!-- <link href="fontawesome-free-5.15.1-web/fontawesome-free-5.15.1-web/css/all.css" rel="stylesheet"> -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+  <script src="js/index.js"></script>
+
+  
+  </head>
+
+<body>
+      <section id="title">
+        <!-- navigation bar -->
+        <div class="topnav" id="myTopnav">
+          <div class="menu-links">
+            <a class="active" href="#home">Home</a>
+          <a href="#about-me">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="blog.html">Blog</a>
+          <div>
+          <button id="signin-button">  <a id="signin-btn" href="signin.html">sign in</a></button>
+          </div>
+          </div>
+          
+          <div  id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+              <a href="#" >Home</a>
+              <a href="#about-me">About</a>
+              <a href="contact.html">Contact</a>
+              <a href="blog.html">Blog</a>
+             <a  href="signin.html">sign in</a>
+          </div>
+          <a href="javascript:void(0);" class="icon" onclick="openNav()">
+            <i class="fa fa-bars"></i>
+          </a>
+         
+        </div>
+        <div id="myTitle">
+          <div class="row">
+            <div class="column">
+             <img id="title-img" src="images/edgar.png">
+            </div>
+            
+            <div class="column">
+              <p>Hello everybody, I am</p>
+              <h1>SHUMBUSHO Edgar</h1>
+              <h3>SOFTWARE DEVELOPER</h3>
+              <hr>
+              <ul style="list-style-type:none;">
+                <li>Web application</li>
+                <li>Desktop application</li>
+                <li>Mobile application</li>
+              </ul>
+            </div>
+            
+          </div>
+        </div>
+        
+      </section>
+  
+    
+       <!-- about me section -->
+    <div id="about-me" >
+    
+          <section class="resume-section" id="about">
+              <h1>ABOUT ME</h1>
+              <P>I am an experienced software developer specialised in front-end and back-end development. i enjoy
+              being engaged with projects that require me to work outside my comfort and knowledge set.
+            </P>
+              
+                <div id="address">
+              <p><i class="fa fa-address-book" aria-hidden="true"></i>  RWANDA / Kigali / Kimuhurura</p>
+              <p><i class="far fa-calendar-alt"></i>  November 3, 1997</p>
+              <p><i class="fas fa-phone-volume"></i>  +250 789 032 236</p>
+              <p><i class="fas fa-envelope-square"></i>  shumbushoedgar@gmail.com</p>
+            </div>
+            
+          </section>
+          <hr>
+          <section class="resume-section" id="education">
+            <h3 class="about-me-header">EDUCATION</h3>
+            
+              <div class="edu-row">
+                <div class="edu-image edu-col">
+                  <img src="images/auca.png" alt="" >
+                </div>
+                <div class="edu-content edu-col">
+                  <p class="education-header">ADVENTIST UNIVERSITY OF CENTRAL AFRICA</p>
+                  <P class="education-desc">Faculty of information technology<br> 2018 - present</P>
+                </div>
+              </div>
+              <div class="edu-row">
+                <div class="edu-image edu-col">
+                  <img src="images/picture-icon-png.jpg" alt="">
+                </div>
+                <div class="edu-content edu-col">
+                  <p class="education-header">GS ASPEKA</p>
+                  <p class="education-desc">Mathematics - Computer Science - Economics<br> 2015 - 2017</p>
+                  <P></P>
+                </div>
+               </div>
+   
+          </section>
+          <hr>
+          <section class="resume-section" id="skills">
+            <h3 class="about-me-header">SKILLS</h3>
+            <div class="skills-icons">
+              <img src="images/javascript-shield-logo-icon.png" width="100px" height="100px" alt="">
+              <img src="images/nodejs.png" width="100px" height="100px" alt="">
+              <img src="images/c.png" width="100px" height="100px" alt="">
+              <img src="images/java.svg" width="100px" height="100px" alt="">
+            </div>
+          </section>
+
+          <hr>
+
+          <section class="resume-section" >
+            <h3 class="about-me-header">CERTIFICATIONS</h3>
+               
+              <div class="cert-row">
+                <div class="certificates">
+                  <img src="images/java-net-cert.jpg" alt="" class="zoom"  >
+                  <div class="desc">UDEMY : Java networking</div>
+                 </div>
+              
+                <div class="certificates">
+                 <img class="zoom"  src="images/spring-certificate.jpg" alt="">
+                 <div class="desc">UDEMY : spring and hibernate</div>
+               </div>
+              
+               <div class="certificates">
+                 <img class="zoom" src="images/certificate of node.jpg" alt="">
+                 <div class="desc">UDEMY : nodejs</div>
+               </div>
+              </div>
+                
+          </section>
+          
+      </div>
+
+      
+     <footer >
+       <div class="footer-content">
+            <div class="newsletter">
+              <h3 class="footer-header">Subscribe to our Newsletter</h3>
+              <input type="text" placeholder=" Email address" class="subscribe-input">
+              <input type="button" value="subscribe" class="subscribe-button">
+            </div>
+        </div>
+        <div class="footer-content">
+            <div >
+              <h3 class="footer-header">Pages</h3>
+              <a href="html/contact.html" class="pages">Contact</a>
+              <a href="html/blog.html" class="pages">Blog</a>
+            </div>
+        </div>
+        <div class="footer-content">
+            <h3 class="footer-header">Follow me:</h3>
+            <a href="https://web.facebook.com/edgar.junior.50309/"><img src="images/facebook .png" alt="" class="social-media"></a>
+            <a href="https://twitter.com/ShumbushoEdgar"><img src="images/twitter.png" alt="" class="social-media"></a>
+            <a href="https://www.linkedin.com/in/shumbusho-edgar-017b00176/"><img src="images/linkedin.png" alt="" class="social-media"></a>
+        </div>
+        <div  class="footer-content copyright">
+            <p>Copyright &#9400; 2020, Allright reserved</p>
+        </div>
+     </footer>
+
+     <!-- sign in form -->
+     <script>
+      // Get the modal
+      var modal = document.getElementById('id01');
+      
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+          if (event.target == modal) {
+              modal.style.display = "none";
+          }
+      }
+      </script>
+      
+
+      <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+        }
+        
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+        }
+        </script>
+     
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/dashboard.css">
+
+</head>
+<body>
+
+<div class="sidenav2">
+  <a href="dashboard.html">Articles</a>
+  <a href="dashboard-users.html">Users</a>
+  <a href="#">Comments</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<div class="main">
+  
+  <section class="add-articles" id="add-art">
+    <div class="events-btn">
+      <input type="button" value="ADD ARTICLE" class="articles-btn active" >
+      <a href="dashboard.html"><input type="button" value="VIEW ARTICLES" class="articles-btn " ></a>
+    </div>
+    <div class="container">
+      <form action="/action_page.php">
+      <div class="row">
+        <div class="col-25">
+          <label for="title">Title</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="title" name="firstname" placeholder="Article title..">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="summary">Summary</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="summary" name="summary" placeholder="article summary..">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="picture">Picture</label>
+        </div>
+        <div class="col-75">
+          <input type="text" name="picture" id="pic">
+          <input type="button" value="Browser" class="browser-btn">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="subject">Subject</label>
+        </div>
+        <div class="col-75">
+          <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <input type="submit" value="POST">
+      </div>
+      </form>
+    </div>
+  </section>
+
+</div>  
+
+</body>
+</html> 
