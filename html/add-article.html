@@ -3,7 +3,10 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../css/dashboard.css">
-
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
+<script src="../js/add-article.js"></script>   
 </head>
 <body>
 
@@ -22,13 +25,13 @@
       <a href="dashboard.html"><input type="button" value="VIEW ARTICLES" class="articles-btn " ></a>
     </div>
     <div class="container">
-      <form action="/action_page.php">
+      <form id="addArticle">
       <div class="row">
         <div class="col-25">
           <label for="title">Title</label>
         </div>
         <div class="col-75">
-          <input type="text" id="title" name="firstname" placeholder="Article title..">
+          <input type="text" id="title" name="title" placeholder="Article title..">
         </div>
       </div>
       <div class="row">
@@ -44,7 +47,7 @@
           <label for="picture">Picture</label>
         </div>
         <div class="col-75">
-          <input type="text" name="picture" id="pic">
+          <input type="file" name="picture" id="pic">
           <input type="button" value="Browser" class="browser-btn">
         </div>
       </div>
@@ -53,7 +56,7 @@
           <label for="subject">Subject</label>
         </div>
         <div class="col-75">
-          <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+          <textarea id="subject" name="content" placeholder="Write something.." style="height:200px"></textarea>
         </div>
       </div>
       <div class="row">
@@ -64,6 +67,23 @@
   </section>
 
 </div>  
+    <script>
+      var firebaseConfig = {
+    apiKey: "AIzaSyBnZ6dPaS7VL3Cq7e6wT_VsrG8OsBvK1Pc",
+    authDomain: "capstone-project-6777c.firebaseapp.com",
+    databaseURL: "https://capstone-project-6777c.firebaseio.com",
+    projectId: "capstone-project-6777c",
+    storageBucket: "capstone-project-6777c.appspot.com",
+    messagingSenderId: "312982162400",
+    appId: "1:312982162400:web:130581f08e902dfb47f985",
+    measurementId: "G-W3BFHWZ5HX"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+  db.settings({timestampInSnapshots:true});
 
+    </script>
+<script src="../js/add-article.js"></script> 
 </body>
 </html> 
