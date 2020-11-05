@@ -6,6 +6,9 @@
         <link rel="stylesheet" href="../css/blog.css">
         <!-- Font Awesome -->
        <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+       <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+       <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+       <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
     </head>
     <body>
       <div class="topnav" id="myTopnav">
@@ -83,10 +86,32 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+          <div class="column col-1" >
+              <ul>
+                  <li><a class="feeds-link" href="#">12 aug, 2020<i class="far fa-calendar-alt"></i></a></li>
+                  <li><a class="feeds-link" href="#"> 1.2M Views<i class="far fa-eye"></i></a></li>
+                  <li><a class="feeds-link" href="#">06 Comments<i class="far fa-comment"></i></a></li>
+              </ul>
+  
+          </div>
+        <div class="column col-2">
+          <div class="blog-article">
+              <img src="../images/blogjs.jpg" alt="">
+              <div>
+              <div id="retrieve-article">
+                  <h2 id="articleTitle"><a href=""></a></h2>
+                  <p id="articleSummary"></p>
+                </div>
+                  <a href="blog-details.html" class="view-more-btn">View More</a>
+            </div>
+          </div>
+      </div>
         
         <div class="column col-3">
         </div>
-      </div>
+        </div>
+      
 
     
 
@@ -114,9 +139,9 @@
                  </div>
                  <div class="footer-content">
                      <h3 class="footer-header">Follow me:</h3>
-                     <a href="https://web.facebook.com/edgar.junior.50309/"><img src="images/facebook .png" alt="" class="social-media"></a>
-                     <a href="https://twitter.com/ShumbushoEdgar"><img src="images/twitter.png" alt="" class="social-media"></a>
-                     <a href="https://www.linkedin.com/in/shumbusho-edgar-017b00176/"><img src="images/linkedin.png" alt="" class="social-media"></a>
+                     <a href="https://web.facebook.com/edgar.junior.50309/"><img src="../images/facebook .png" alt="" class="social-media"></a>
+                     <a href="https://twitter.com/ShumbushoEdgar"><img src="../images/twitter.png" alt="" class="social-media"></a>
+                     <a href="https://www.linkedin.com/in/shumbusho-edgar-017b00176/"><img src="../images/linkedin.png" alt="" class="social-media"></a>
                  </div>
                  <div  class="footer-content copyright">
                      <p>Copyright &#9400; 2020, Allright reserved</p>
@@ -132,6 +157,25 @@
                   document.getElementById("mySidenav").style.width = "0";
                 }
                 </script>
+
+<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyA5DqS37CxCsVTe4irBFN97DL29F8cZPPg",
+    authDomain: "capstone-project-b846a.firebaseapp.com",
+    databaseURL: "https://capstone-project-b846a.firebaseio.com",
+    projectId: "capstone-project-b846a",
+    storageBucket: "capstone-project-b846a.appspot.com",
+    messagingSenderId: "770713433981",
+    appId: "1:770713433981:web:83d1a849d35ee817f83e14",
+    measurementId: "G-QS3ECVY943"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  const db = firebase.firestore();
+  db.settings({timestampsInSnapshots:true});
+</script>
+<script src="../js/read-article.js"></script>
     </body>
 </html>
 
