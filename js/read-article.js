@@ -14,8 +14,8 @@ function renderArticle(doc){
     summary.textContent = doc.data().summary;
    
 
-    article.appendChild(div.appendChild(tit));
-    article.appendChild(div.appendChild(summary));
+    // article.appendChild(div.appendChild(tit));
+    // article.appendChild(div.appendChild(summary));
    
 
     document.querySelector('#viewMore').addEventListener('click', function(event){
