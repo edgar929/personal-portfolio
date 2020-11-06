@@ -9,4 +9,7 @@ const form = document.querySelector('#addArticle');
             summary: form.summary.value,
             title: form.title.value
         });
+        form.title.value='';
+        form.summary.value='';
+        form.content.value='';
   });
