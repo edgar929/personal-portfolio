@@ -3,7 +3,9 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../css/dashboard.css">
-
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
 </head>
 <body>
 
@@ -23,36 +25,34 @@
       <input type="button" value="VIEW ARTICLES" class="articles-btn active">
     </div>
     <table id="articles-dash">
-      <tr>
-        <th>Article</th>
-        <th>Action</th>
+      
+      <tr >
+        <ul id="articleTitles"></ul>
       </tr>
-      <tr>
-        <td>why must you learn javascript?</td>
-        <td><a href="add-article.html">UPDATE  </a> | <a href="">DELETE</a> </td>
-      </tr>
-      <tr>
-        <td>why must you learn javascript?</td>
-        <td><a href="add-article.html">UPDATE  </a> | <a href="">DELETE</a> </td>
-      </tr>
-      <tr>
-        <td>why must you learn javascript?</td>
-        <td><a href="add-article.html">UPDATE  </a> | <a href="">DELETE</a> </td>
-      </tr>
-      <tr>
-        <td>why must you learn javascript?</td>
-        <td><a href="add-article.html">UPDATE  </a> | <a href="">DELETE</a> </td>
-      </tr>
-      <tr>
-        <td>why must you learn javascript?</td>
-        <td><a href="#">UPDATE  </a> | <a href="">DELETE</a> </td>
-      </tr>
+     
      
     </table>
   </section>
  
-
 </div>  
-
+  
+<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyA5DqS37CxCsVTe4irBFN97DL29F8cZPPg",
+    authDomain: "capstone-project-b846a.firebaseapp.com",
+    databaseURL: "https://capstone-project-b846a.firebaseio.com",
+    projectId: "capstone-project-b846a",
+    storageBucket: "capstone-project-b846a.appspot.com",
+    messagingSenderId: "770713433981",
+    appId: "1:770713433981:web:83d1a849d35ee817f83e14",
+    measurementId: "G-QS3ECVY943"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  const db = firebase.firestore();
+  db.settings({timestampsInSnapshots:true});
+</script>
+<script src="../js/dashboardReadArticle.js"></script>
 </body>
 </html> 

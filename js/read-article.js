@@ -16,13 +16,14 @@ function renderArticle(doc){
     image.textContent = '';
     btn.textContent='view more';
     
-    article.appendChild(div.appendChild(image));
-    a.appendChild(article.appendChild(div.appendChild(tit)));
+     article.appendChild(div.appendChild(image));
+     article.appendChild(div.appendChild(tit));
      article.appendChild(div.appendChild(summary));
      article.appendChild(div.appendChild(btn));
      article.appendChild(div.appendChild(hr));
+    
      
-    // document.querySelector('#viewMore').addEventListener('click', function(event){
+    // document.querySelector(btn).addEventListener('click', function(event){
     //     let id =event.target.parentNode.getAttribute('article-id');
        
     //     window.open('blog-details.html');
