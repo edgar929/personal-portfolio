@@ -3,17 +3,31 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../css/dashboard.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
 </head>
 <body>
 
-<div class="sidenav2 dashboard">
-  <a href="#about">Articles</a>
-  <a href="dashboard-users.html">Users</a>
-  <a href="#">Comments</a>
-  <a href="#contact">Contact</a>
+  <div class="topnav" id="myTopnav">
+    <div class="menu-links">
+        <a href="index.html" >Home</a>
+    <a href="index.html#about-me">About</a>
+    <a href="#contact" >Contact</a>
+    <a href="blog.html">Blog</a>
+     
+    </div>
+    <div  id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <a href="index.html" >Home</a>
+          <a href="#about-me">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="blog">Blog</a>
+      </div>
+      <a href="javascript:void(0);" class="icon" onclick="openNav()">
+        <i class="fa fa-bars"></i>
+      </a>
 </div>
 
 <div class="main dashboard">
@@ -54,5 +68,14 @@
   db.settings({timestampsInSnapshots:true});
 </script>
 <script src="../js/dashboardReadArticle.js"></script>
+<script>
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+  }
+  
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+  }
+  </script>
 </body>
 </html> 

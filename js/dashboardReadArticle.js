@@ -2,6 +2,7 @@ const trow = document.querySelector('#articleTitles');
 
 function renderArticle(doc){
     let li = document.createElement('li');
+    let div = document.createElement('div');
     let title = document.createElement('span');
     let action1 = document.createElement('button');
     let action2 = document.createElement('button');
@@ -12,10 +13,9 @@ function renderArticle(doc){
     action2.textContent = 'update';
 
     li.appendChild(title);
-    li.appendChild(action1);
-    li.appendChild(action2);
+    li.appendChild(div.appendChild(action1));
+    li.appendChild(div.appendChild(action2));
     trow.appendChild(li);
-
     //deleting article
     action1.addEventListener('click', (e)=>{
         e.stopPropagation();
