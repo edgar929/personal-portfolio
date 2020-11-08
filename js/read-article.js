@@ -16,18 +16,18 @@ function renderArticle(doc){
     image.textContent = '';
     btn.textContent='view more';
     
-     article.appendChild(div.appendChild(image));
-     article.appendChild(div.appendChild(tit));
-     article.appendChild(div.appendChild(summary));
-     article.appendChild(div.appendChild(btn));
-     article.appendChild(div.appendChild(hr));
-    
+     div.appendChild(image);
+     div.appendChild(tit);
+     div.appendChild(summary);
+     div.appendChild(btn);
+     div.appendChild(hr);
      
-    // document.querySelector(btn).addEventListener('click', function(event){
-    //     let id =event.target.parentNode.getAttribute('article-id');
-       
-    //     window.open('blog-details.html');
-    // })  
+    btn.addEventListener('click', (e)=>{
+        e.stopPropagation();
+        let id=e.target.parentElement.getAttribute('article-id');
+         window.location.href=`blog-details.html#${id}`;
+        
+    })
 }
 
 db.collection('articles').get().then((snapshot)=>{
@@ -36,3 +36,4 @@ db.collection('articles').get().then((snapshot)=>{
      console.log(doc.data())
     })
 })
+
