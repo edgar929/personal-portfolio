@@ -79,7 +79,7 @@ img {
     margin-bottom: 40px;
   }
   .article .comment .commentor {
-    display: flex;
+    display: block;
     gap: 10px;
     font-size: 16px;
   }
