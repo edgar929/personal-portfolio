@@ -13,7 +13,7 @@ function renderArticle(doc){
     div.setAttribute('article-id', doc.id);
     tit.textContent = doc.data().title;
     summary.textContent = doc.data().summary;
-    image.textContent = '';
+    image.src =  doc.data().picture;
     btn.textContent='view more';
     
      div.appendChild(image);
@@ -25,7 +25,7 @@ function renderArticle(doc){
     btn.addEventListener('click', (e)=>{
         e.stopPropagation();
         let id=e.target.parentElement.getAttribute('article-id');
-         window.location.href=`blog-details.html#${id}`;
+         window.location.href=`blog-details.html#${doc.id}`;
         
     })
 }
@@ -33,7 +33,6 @@ function renderArticle(doc){
 db.collection('articles').get().then((snapshot)=>{
     snapshot.docs.forEach(doc=>{
      renderArticle(doc);
-     console.log(doc.data())
     })
 })
 

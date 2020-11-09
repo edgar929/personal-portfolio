@@ -20,7 +20,12 @@ function renderArticle(doc){
     action1.addEventListener('click', (e)=>{
         e.stopPropagation();
         let id=e.target.parentElement.getAttribute('article-id');
-        db.collection('articles').doc(id).delete();
+        if(confirm('are you sure you want delete this post?')){
+            db.collection('articles').doc(id).delete();
+            alert("Document successfully deleted!");
+                location.reload();
+        }
+        
     })
 
     //updating article

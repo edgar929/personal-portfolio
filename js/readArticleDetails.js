@@ -1,34 +1,30 @@
 let id=location.hash.slice(1);
-console.log(id)
+
 function renderArticle(article){
     const title=document.querySelector('#blogTitle');
     const content=document.querySelector('#blogContent');
     const picture=document.querySelector('#blogPicture');
     title.textContent=article.title;
     content.textContent=article.content;
-    picture.textContent = article.picture;
+    picture.src = article.picture;
 }
 
 db.collection('articles').doc(id).get().then((article)=>{
     renderArticle(article.data());
 }) 
 
-// const form=document.querySelector('#addArticle');
-// form.addEventListener('submit', (e) =>{
-//     e.preventDefault();
-//     db.collection('articles').doc(id).update({
-        
-//              content: form.content.value,
-//             picture:'',
-//             summary: form.summary.value,
-//             title: form.title.value
-//     })
+//comments of the blog post
 
-//     document.querySelector('[name= title]').value=' ';
-//     document.querySelector('[name= content]').value=' ';
+const form = document.querySelector('#commentForm');
 
-//     setTimeout(()=>{
-//         window.location.href='add-article.html';
-//     },1500)
-// })
-
+form.addEventListener('submit', (e) =>{
+    e.preventDefault();
+    const name = document.querySelector('#commentorName'); 
+    const comment = document.querySelector('#commentorComment'); 
+    db.collection('articles').doc(id).add({
+        comment:{
+            name,
+            comment
+        }
+    })
+})
