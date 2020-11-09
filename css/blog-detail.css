@@ -103,3 +103,17 @@ img {
     text-emphasis: bold;
     border-radius: 4px;
   }
+
+  .comment p{
+    font-size: 16px;
+  }
+  .comment span{
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .comment{
+    background-color: cornsilk;
+  }
+  .comment p, span{
+    margin-left: 30px;
+  }

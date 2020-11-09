@@ -27,8 +27,8 @@ form.addEventListener('submit', (e)=>{
               
           })
           form.name.value='';
-          form.comment.value='';
-          location.reload();
+          form.comment.value=''
+          
           })
 
           //reading comments
