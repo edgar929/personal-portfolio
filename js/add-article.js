@@ -1,50 +1,65 @@
 const form = document.querySelector('#addArticle');
+form.addEventListener('submit', (e)=>{
+  e.preventDefault();
+ 
+      uploadImage();
+  
+  })
 
   //save article
-  form.addEventListener('submit', (e)=>{
-        e.preventDefault();
+  // form.addEventListener('submit', (e)=>{
+  //       e.preventDefault();
        
-          db.collection('articles').add({
-            content: form.content.value,
-            picture:'',
-            summary: form.summary.value,
-            title: form.title.value
-        })
-        form.title.value='';
-        form.summary.value='';
-        form.content.value='';
-        })
+  //         db.collection('articles').add({
+  //           content: form.content.value,
+  //           picture:'',
+  //           summary: form.summary.value,
+  //           title: form.title.value
+  //       })
+  //       form.title.value='';
+  //       form.summary.value='';
+  //       form.content.value='';
+  //       })
      
 
-  // function upload(){
-  //   var image = document.getElementById('pic').files[0];
-  //   var content= document.getElementById('content').value;
-  //    var summary=document.getElementById('summary').value;
-  //      var title= document.getElementById('title').value;
-  //      var imageName = image.name;
-  //      var storageRef = firebase.storage().ref('images/'+imageName);
-  //      var uploadTask = storageRef.put(image);
-  //      uploadTask.on('state changed',function(snapshot){
-  //       var progress = (snapshot.bytesTransferred/snapshot.totalBytes)*100;
-  //       console.log("upload is"+progress+"done");
-  //      },function(error){
-  //       console.log(error.message);
-  //      },function(){
-  //       uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL){
-  //         firebase.database().ref('articles/').set({
-  //           content:content,
-  //           picture:downloadURL,
-  //           summary:summary,
-  //           title:title
-  //         },function(error){
-  //                   if(error){
-  //                     alert('error while uploading');
-  //                   }else{
-  //                     alert('successfully upload ');
-  //                     document.querySelector('#addArticle').reset();
-  //                   }
-  //                 });
+  
+  
+  function uploadImage(){
+    //get image
+    const image = document.querySelector('#pic').files[0];
+    const imageName = image.name;
+    //ref to root storage + image storage
+    var storageRef = firebase.storage().ref('images/'+imageName);
+    //upload image to selected storage
+    const uploadTask = storageRef.put(image);
+    //get upload progress
+    uploadTask.on('state_changed', function(snapshot){
+        //get progress
+        const progress = (snapshot.bytestransferred/snapshot.totalBytes)*100;
+        console.log("Upload is " +progress+ " done");
+    }, function(error){
+        //handle errors
+        console.log(error.message);
+    }, function(){
+        //handle successful upload
+        
+        uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL){
+            db.collection('articles').add({
+                picture: downloadURL,
+                content: form.content.value,
+                summary: form.summary.value,
+                title: form.title.value
+            }).then(function(){
+                alert('Successfuly uploaded!');
+                form.reset();
+                // window.location.href = "../html/blog.html";
+            })
+            .catch(function(error) {
+                alert('Error uploading post, Try again!');
+            });
+             
+        });
+      
+    });   
+};
 
-  //       });
-  //      });
-  // }
