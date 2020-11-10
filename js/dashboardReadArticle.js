@@ -20,12 +20,12 @@ function renderArticle(doc){
     action1.addEventListener('click', (e)=>{
         e.stopPropagation();
         let id=e.target.parentElement.getAttribute('article-id');
-        if(confirm('are you sure you want delete this post?')){
-            db.collection('articles').doc(id).delete();
-            alert("Document successfully deleted!");
-                location.reload();
-        }
-        
+            if(confirm('are you sure you want to delete this article?')){
+                db.collection('articles').doc(id).delete(); 
+                location.reload()
+            } else {
+                window.localStorage.href="dashboard.html"
+            }
     })
 
     //updating article
