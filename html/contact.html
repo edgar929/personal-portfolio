@@ -65,18 +65,18 @@
                     </div>
                 </div>
                 <div class="contactForm">
-                    <form action="">
+                    <form id="myContactForm">
                         <h3>Send message</h3>
                         <div class="inputBox">
-                            <input type="text" name="" id="" required="required">
+                            <input type="text" name="fullName" id="" required="required">
                             <span>Full Name</span>
                         </div>
                         <div class="inputBox">
-                            <input type="text" name="" id="" required="required">
+                            <input type="text" name="email" id="" required="required">
                             <span>Email</span>
                         </div>
                         <div class="inputBox">
-                            <textarea name="" id="" cols="30" rows="10" required="required"></textarea>
+                            <textarea name="message" id="" cols="30" rows="10" required="required"></textarea>
                             <span>Message</span>
                         </div>
                         <div class="inputBox">
@@ -121,5 +121,25 @@
               document.getElementById("mySidenav").style.width = "0";
             }
             </script>
+            <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-analytics.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
+            <script>
+                var firebaseConfig = {
+                  apiKey: "AIzaSyA5DqS37CxCsVTe4irBFN97DL29F8cZPPg",
+                  authDomain: "capstone-project-b846a.firebaseapp.com",
+                  databaseURL: "https://capstone-project-b846a.firebaseio.com",
+                  projectId: "capstone-project-b846a",
+                  storageBucket: "capstone-project-b846a.appspot.com",
+                  messagingSenderId: "770713433981",
+                  appId: "1:770713433981:web:83d1a849d35ee817f83e14",
+                  measurementId: "G-QS3ECVY943"
+                };
+                // Initialize Firebase
+                firebase.initializeApp(firebaseConfig);
+                firebase.analytics();
+                const db = firebase.firestore();
+              </script>
+              <script src="../js/contact.js"></script>
     </body>
 </html>
