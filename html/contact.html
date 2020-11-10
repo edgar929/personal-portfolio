@@ -80,7 +80,7 @@
                             <span>Message</span>
                         </div>
                         <div class="inputBox">
-                            <input type="button" value="Send">
+                            <input type="submit" value="Send">
                         </div>
                     </form>
                 </div>
@@ -121,8 +121,8 @@
               document.getElementById("mySidenav").style.width = "0";
             }
             </script>
+             <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
             <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-analytics.js"></script>
-            <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
             <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
             <script>
                 var firebaseConfig = {
@@ -139,6 +139,7 @@
                 firebase.initializeApp(firebaseConfig);
                 firebase.analytics();
                 const db = firebase.firestore();
+                db.settings({timestampsInSnapshot:true});
               </script>
               <script src="../js/contact.js"></script>
     </body>
