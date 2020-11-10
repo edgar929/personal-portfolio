@@ -32,17 +32,17 @@
 
 <div class="main dashboard">
   <section class="view-articles" id="view-art">
-    <h2>Articles</h2>
+    <h2>Messages</h2>
 
     <div class="events-btn">
       <a href="add-article.html"><input type="button" value="ADD ARTICLE" class="articles-btn" ></a>
-      <input type="button" value="VIEW ARTICLES" class="articles-btn active">
-      <a href="messagesDashboard.html"><input type="button" value="Messages" class="articles-btn" ></a>
+      <a href="dashboard.html"><input type="button" value="VIEW ARTICLES" class="articles-btn "></a>
+      <a href=""><input type="button" value="Messages" class="articles-btn active"></a>
     </div>
     <table id="articles-dash">
       
       <tr >
-        <ul id="articleTitles"></ul>
+        <ul id="messages"></ul>
       </tr>
      
      
@@ -68,7 +68,7 @@
   const db = firebase.firestore();
   db.settings({timestampsInSnapshots:true});
 </script>
-<script src="../js/dashboardReadArticle.js"></script>
+<script src="../js/readMessages.js"></script>
 <script>
   function openNav() {
     document.getElementById("mySidenav").style.width = "250px";

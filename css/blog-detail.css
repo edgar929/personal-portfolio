@@ -64,7 +64,7 @@ img {
     margin: 20px 0;
     border: none;
     width: 50%;
-    border-bottom: 2px solid var(--color-grey);
+    border: 1px solid var(--color-grey);
   }
   .article .add-comment input:focus {
     outline: none;
@@ -79,7 +79,7 @@ img {
     margin-bottom: 40px;
   }
   .article .comment .commentor {
-    display: flex;
+    display: block;
     gap: 10px;
     font-size: 16px;
   }
@@ -95,4 +95,25 @@ img {
   .article .add-comment textarea {
     width: 100%;
   }
-  
+  form a{
+    background-color: darkgray;
+    padding:7px;
+    text-decoration: none;
+    color: black;
+    text-emphasis: bold;
+    border-radius: 4px;
+  }
+
+  .comment p{
+    font-size: 16px;
+  }
+  .comment span{
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .comment{
+    background-color: cornsilk;
+  }
+  .comment p, span{
+    margin-left: 30px;
+  }
