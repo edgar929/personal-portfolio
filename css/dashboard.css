@@ -201,7 +201,7 @@ body {
   .add-articles{
     margin-top: 10px;
   }
-  input[type=text], select, textarea {
+  input[type=text], select, textarea,input[type=file] {
     width: 80%;
     padding: 12px;
     border: 1px solid #ccc;
