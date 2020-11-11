@@ -44,13 +44,32 @@
       <tr >
         <ul id="messages"></ul>
       </tr>
-     
+      <button class="accordion"></button>
+      <div class="panel">
+        <p id="accEmail"></p>
+        <p id="accMessage"></p>
+      </div>
      
     </table>
   </section>
  
 </div>  
+<script>
+  var acc = document.getElementsByClassName("accordion");
+  var i;
   
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+      } else {
+        panel.style.display = "block";
+      }
+    });
+  }
+  </script>
 <script>
   var firebaseConfig = {
     apiKey: "AIzaSyA5DqS37CxCsVTe4irBFN97DL29F8cZPPg",
