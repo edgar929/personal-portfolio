@@ -21,24 +21,39 @@ function renderArticle(doc){
         e.stopPropagation();
         let id=e.target.parentElement.getAttribute('article-id');
             if(confirm('are you sure you want to delete this article?')){
-                db.collection('articles').doc(id).delete(); 
-                location.reload()
-            } else {
-                window.localStorage.href="dashboard.html"
-            }
+                db.collection('articles').doc(id).delete().then(()=>{
+                    alert('article deleted successful')
+                }); 
+            } 
+            
     })
 
     //updating article
     action2.addEventListener('click', (e)=>{
         e.stopPropagation();
         let id=e.target.parentElement.getAttribute('article-id');
-         window.location.href=`add-article.html#${id}`;
+         window.location.href=`update-article.html#${id}`;
     })
 
 }
 
-db.collection('articles').get().then((snapshot)=>{
-    snapshot.docs.forEach(doc=>{
-     renderArticle(doc);
+// db.collection('articles').get().then((snapshot)=>{
+//     snapshot.docs.forEach(doc=>{
+//      renderArticle(doc);
+//     })
+// })
+window.onload=function(){
+    db.collection('articles').onSnapshot(snapshot =>{
+        let changes =snapshot.docChanges();
+        changes.forEach(change =>{
+            if(change.type == 'added'){
+                renderArticle(change.doc);
+            }
+            else if(change.type == 'removed'){
+                let art =document.querySelector('[article-id =' +change.doc.id +']');
+                trow.removeChild(art);
+            }
+        })
     })
-})
+}
+

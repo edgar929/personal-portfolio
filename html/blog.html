@@ -7,6 +7,7 @@
         <!-- Font Awesome -->
        <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
        <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+       <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
        <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
        <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
        
@@ -14,18 +15,15 @@
     <body>
       <div class="topnav" id="myTopnav">
         <div class="menu-links">
-            <a href="index.html" >Home</a>
-        <a href="index.html#about-me">About</a>
+            <a href="../index.html" >Home</a>
+        <a href="../index.html#about-me">About</a>
         <a href="contact.html">Contact</a>
         <a href="#" class="active">Blog</a>
-        <!-- <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-          <i class="fa fa-bars"></i>
-        </a> -->
         </div>
         <div  id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-              <a href="index.html" >Home</a>
-              <a href="#about-me">About</a>
+              <a href="../index.html" >Home</a>
+              <a href="../index.html#about-me">About</a>
               <a href="contact.html">Contact</a>
               <a href="">Blog</a>
           </div>
@@ -69,8 +67,8 @@
                  <div class="footer-content">
                      <div >
                        <h3 class="footer-header">Pages</h3>
-                       <a href="html/contact.html" class="pages">Contact</a>
-                       <a href="html/blog.html" class="pages">Blog</a>
+                       <a href="contact.html" class="pages">Contact</a>
+                       <a href="blog.html" class="pages">Blog</a>
                      </div>
                  </div>
                  <div class="footer-content">
@@ -110,9 +108,12 @@
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
   const db = firebase.firestore();
+  const auth = firebase.auth();
   db.settings({timestampsInSnapshots:true});
+  
 </script>
 <script src="../js/read-article.js"></script>
+<script src="../js/auth.js"></script>
     </body>
 </html>
 

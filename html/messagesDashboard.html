@@ -3,7 +3,6 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../css/dashboard.css">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
@@ -14,13 +13,13 @@
     <div class="menu-links">
         <a href="index.html" >Home</a>
     <a href="index.html#about-me">About</a>
-    <a href="#contact" >Contact</a>
+    <a href="contact.html" >Contact</a>
     <a href="blog.html">Blog</a>
      
     </div>
     <div  id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-          <a href="index.html" >Home</a>
+          <a href="../index.html" >Home</a>
           <a href="#about-me">About</a>
           <a href="contact.html">Contact</a>
           <a href="blog">Blog</a>
@@ -35,25 +34,35 @@
     <h2>Messages</h2>
 
     <div class="events-btn">
-      <a href="add-article.html"><input type="button" value="ADD ARTICLE" class="articles-btn" ></a>
-      <a href="dashboard.html"><input type="button" value="VIEW ARTICLES" class="articles-btn "></a>
+      <div>
+        <a href="add-article.html"><input type="button" value="Add article" class="articles-btn" ></a>
+      </div>
+     <div>
+      <a href="dashboard.html"><input type="button" value="View articles" class="articles-btn "></a>
+     </div>
+     <div>
       <a href=""><input type="button" value="Messages" class="articles-btn active"></a>
+     </div>
+     
     </div>
     <table id="articles-dash">
       
       <tr >
         <ul id="messages"></ul>
       </tr>
-      <div id="singleMessage">
-        <div id="theMessage">
+   
+      <div class="singleMessage">
+         <div class="theMessage">
           <button class="accordion" id="FullName"></button>
           <div class="panel">
-          <p id="accEmail"></p>
-          <p id="accMessage"></p>
-        </div>
-        </div>
+           <p id="accEmail"></p>
+           <p id="accMessage"></p>
+        </div> 
+       
+    </div>
+    </div>
         
-      </div>
+      
       
      
     </table>

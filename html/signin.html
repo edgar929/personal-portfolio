@@ -7,14 +7,48 @@
   </head>
   <body>
 
-<form class="box" action="index.html" method="post">
-  <h1>SIGN IN</h1>
-  <input type="email" name="" placeholder="Email" id="signin-email">
-  <input type="text" name="" placeholder="Username">
-  <input type="password" name="" placeholder="Password">
-  <input type="submit" name="" value="Sign in">
-</form>
-
+    <form class="box" id="signin-form">
+      <h1>SIGN IN</h1>
+      <p id="error" style="color: red;"></p>
+      <div>
+        <input type="email" name="" placeholder="Email" id="signin-email" required /> 
+        <p id="email-error" style="color: red;"></p>
+      </div>
+      
+      <div>
+        <input type="password" name="" placeholder="Password" id="signin-password" required />
+        <p id="password-error" style="color: red;"></p>
+      </div>
+      
+      <input type="submit" name="" value="Sign in" />
+    </form>
 
   </body>
+  <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyA5DqS37CxCsVTe4irBFN97DL29F8cZPPg",
+    authDomain: "capstone-project-b846a.firebaseapp.com",
+    databaseURL: "https://capstone-project-b846a.firebaseio.com",
+    projectId: "capstone-project-b846a",
+    storageBucket: "capstone-project-b846a.appspot.com",
+    messagingSenderId: "770713433981",
+    appId: "1:770713433981:web:83d1a849d35ee817f83e14",
+    measurementId: "G-QS3ECVY943"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+  db.settings({timetampsInSnapshots:true});
+</script>
+<script src="../js/auth.js"></script>
 </html>

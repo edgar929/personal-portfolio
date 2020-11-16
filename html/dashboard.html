@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="../css/dashboard.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
 </head>
@@ -12,18 +13,20 @@
 
   <div class="topnav" id="myTopnav">
     <div class="menu-links">
-        <a href="index.html" >Home</a>
-    <a href="index.html#about-me">About</a>
-    <a href="#contact" >Contact</a>
+        <a href="../index.html" >Home</a>
+    <a href="../index.html#about-me">About</a>
+    <a href="contact.html" >Contact</a>
     <a href="blog.html">Blog</a>
      
     </div>
+    <a  href="" class="logout">logout</a>
     <div  id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-          <a href="index.html" >Home</a>
-          <a href="#about-me">About</a>
+          <a href="../index.html" >Home</a>
+          <a href="../index#about-me">About</a>
           <a href="contact.html">Contact</a>
-          <a href="blog">Blog</a>
+          <a href="blog.html">Blog</a>
+          <a  href="" class="logout">logout</a>
       </div>
       <a href="javascript:void(0);" class="icon" onclick="openNav()">
         <i class="fa fa-bars"></i>
@@ -33,12 +36,20 @@
 <div class="main dashboard">
   <section class="view-articles" id="view-art">
     <h2>Articles</h2>
-
+    
     <div class="events-btn">
-      <a href="add-article.html"><input type="button" value="ADD ARTICLE" class="articles-btn" ></a>
-      <input type="button" value="VIEW ARTICLES" class="articles-btn active">
+      <div>
+        <a href="add-article.html"><input type="button" value="Add article" class="articles-btn" ></a>
+      </div>
+     <div>
+      <input type="button" value="View article" class="articles-btn active">
+     </div>
+     <div>
       <a href="messagesDashboard.html"><input type="button" value="Messages" class="articles-btn" ></a>
+     </div>
+     
     </div>
+    
     <table id="articles-dash">
       
       <tr >
@@ -65,10 +76,12 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
+  const auth = firebase.auth();
   const db = firebase.firestore();
   db.settings({timestampsInSnapshots:true});
 </script>
 <script src="../js/dashboardReadArticle.js"></script>
+<script src="../js/auth.js"></script>
 <script>
   function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
@@ -77,6 +90,7 @@
   function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
   }
+  
   </script>
 </body>
 </html> 
