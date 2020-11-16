@@ -1,11 +1,12 @@
 let id=location.hash.slice(1);
 const file = document.querySelector('#pic').value;
 let changed = false;
-let fil =null;
+
 let image=''
 db.collection('articles').doc(id).get().then((article)=>{
     image=article.data().picture;
 }) 
+
 function renderArticle(article){
     const title=document.querySelector('#title');
     const summary=document.querySelector('#summary');
@@ -30,55 +31,30 @@ const form=document.querySelector('#addArticle');
 
 
 
-if (file!==null){
-    // console.log('changed')
-    // const image = document.querySelector('#pic').files[0];
-    // const imageName = image.name;
-    // let storageRef = firebase.storage().ref('images/'+ imageName);
-    // db.collection('articles').doc(id).get().then((article)=>{
-    //     let im =firebase.storage().refFromURL(article.data().picture);
-    //     im.delete().then(()=>{
-    //         console.log('deleted succefully');
-    //         storageRef.put(fil).then((snapshot)=>{
-    //             storageRef.getDownloadURL().then(url =>{
-    //                db.collection('articles').doc(id).update({
-    //                     title:form.title.value,
-    //                     summary:form.summary.value,
-    //                     content:form.content.value,
-    //                     picture:url
-    //                 }).then(()=>{
-    //                      document.querySelector('[name= title]').value=' ';
-    //                      document.querySelector('[name= summary]').value=' ';
-    //                     document.querySelector('[name= content]').value=' ';
-    //                     console.log('done');
-    //                     window.location.href='dashboard.html';
-    //                 })
-    //             })
-    //         })
-    //     })
-    // })
-    // .catch((error =>{
-    //     console.log(error);
-    // }))
+if (file===null){
+ console.log(file)
+ form.addEventListener('submit', (e) =>{
+    e.preventDefault();
+    db.collection('articles').doc(id).update({
+             content: form.content.value,
+            summary: form.summary.value,
+            title: form.title.value,
+            picture: doc(id).get().picture
+    }).then(function(){
+        alert('updated successfully')
+        window.location.href = "dashboard.html";
+    })
+
+    form.reset()
+    
+})
+}else{
     form.addEventListener('submit', (e)=>{
         e.preventDefault();
-       
+         console.log('nothing')
             uploadImage();
-        
-        })
-}else{
-    form.addEventListener('submit', (e) =>{
-        e.preventDefault();
-        db.collection('articles').doc(id).update({
-                 content: form.content.value,
-                summary: form.summary.value,
-                title: form.title.value
-        }).then(function(){
-            alert('updated successfully')
         })
     
-        myform.reset()
-    })
 }
 
 
@@ -88,12 +64,17 @@ if (file!==null){
 
 function uploadImage(){
     //get image
-    const image = document.querySelector('#pic').files[0];
-    const imageName = image.name;
+    let images = document.querySelector('#pic').files[0];
+    console.log("file is ",file)
+    if(images==null){
+        images = image;
+    }
+    console.log("image 2 is ",images)
+    const imageName = images.name;
     //ref to root storage + image storage
     var storageRef = firebase.storage().ref('images/'+imageName);
     //upload image to selected storage
-    const uploadTask = storageRef.put(image);
+    const uploadTask = storageRef.put(images);
     //get upload progress
     uploadTask.on('state_changed', function(snapshot){
         //get progress
@@ -106,20 +87,29 @@ function uploadImage(){
         //handle successful upload
         
         uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL){
+          console.log(downloadURL)
+                db.collection('articles').doc(id).update({
+                    content: form.content.value,
+                   summary: form.summary.value,
+                   title: form.title.value,
+           }).then(function(){
+               alert('updated successfully')
+               window.location.href = "dashboard.html";
+           })
             db.collection('articles').doc(id).update({
                 picture: downloadURL,
                 content: form.content.value,
                 summary: form.summary.value,
                 title: form.title.value
             }).then(function(){
-                alert('Successfuly uploaded!');
+                alert('Successfuly updated!');
                 form.reset();
                 window.location.href = "dashboard.html";
             })
             .catch(function(error) {
                 alert('Error uploading post, Try again!');
             });
-             
+        
         });
       
     });   

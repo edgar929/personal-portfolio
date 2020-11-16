@@ -1,3 +1,11 @@
+import {auth, db} from './firebaseConfig.js'
+
+auth.onAuthStateChanged(user=>{
+    if(!user){
+      window.location.href="signin.html";
+    }
+  })
+
 const trow = document.querySelector('#articleTitles');
 
 function renderArticle(doc){
@@ -57,3 +65,13 @@ window.onload=function(){
     })
 }
 
+const logout = document.querySelector('#logout');
+  if(logout){
+    logout.addEventListener('click', (e)=>{
+      e.preventDefault()
+      console.log('logout clicked')
+      auth.signOut().then(()=>{
+        window.location.href="signin.html";
+      })
+  })
+  }
