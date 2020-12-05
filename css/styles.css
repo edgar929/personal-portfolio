@@ -1,6 +1,5 @@
 * {
     box-sizing: border-box;
-    
   }
   
   
@@ -12,6 +11,7 @@
     overflow-x: hidden !important;
     max-width: 100% !important;
     margin: 0;
+    padding: 0;
   }
   .topnav {
     background-color: #90b8ac;
@@ -19,6 +19,7 @@
    position: relative;
    margin-right: 105px;
    width:100%;
+
   }
   .menu-links{
     margin-left: 200px;
@@ -81,6 +82,13 @@
     .row{
        flex-direction: column;
     }
+    #about-me{
+      margin-top: 10px;
+    }
+    .cert-row{
+      width: 100%;
+      align-items: center;
+    }
     .colu{
       box-sizing: content-box;
       flex-direction: column;
@@ -92,9 +100,20 @@
     body {
       overflow-x: hidden !important;
       max-width: 100% !important;
+      margin: 0;
+  }
+  #signin-button{
+    display: none;
   }
   .column h1{
-    font-size: 17px;
+    font-size: 10px;
+  }
+  .column h3 p{
+    font-size: 16px;
+  }
+  .column ul li{
+    font-size: 20px;
+    text-align: center;
   }
  
  }
@@ -192,6 +211,7 @@
       text-shadow: 2px 2px 5px gray;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
     }
+    
     
   }
   

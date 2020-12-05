@@ -4,7 +4,13 @@
 
   body {
     margin: 0;
+    overflow-x: hidden !important;
+    max-width: 100% !important;
   }
+  /* .container{
+    display: flex;
+    flex-wrap: wrap;
+  } */
   .topnav {
     background-color: #90b8ac;
     overflow: hidden;
@@ -51,6 +57,7 @@
       float: left;
       display: table-column;
     }
+    
     .menu-links{
       margin-left: 0px;
       padding-left: 15px;
@@ -58,6 +65,7 @@
     .topnav{
       width: 100%;
       padding-left: 10px;
+      height: 56px;
     }
   }
   
@@ -73,6 +81,7 @@
     }
     .topnav{
       width: 100%;
+      height:56px
     }
   }
   
@@ -164,7 +173,7 @@ footer{
  @media screen and (max-width: 768px) {
   .footer-content{
     padding-top: 10px;
-    margin: 30px 100px;
+    margin: 10px 30px;
     display: block;
   }
   .footer-header{
@@ -247,20 +256,11 @@ img{
 }
 
 .column {
-    float: left;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
   }
-  .col-1{
-    width: 30%;
-    padding-top: 110px;
-    line-height: 50px;
-    padding-left: 230px;
-  }
-  .col-2{
-    width: 50%;
-  }
-  .col-3{
-    width: 20%;
-  }
+  
   
   
   /* Clear floats after the columns */
@@ -284,27 +284,84 @@ img{
     color: black;
   }
   
-  @media screen and (max-width:768px) {
-    
-    p{
-      font-size: 24px;
-    }
+  
+  
+  @media screen and (max-width:1024px){
     img{
-      width: 400px;
-      height: 200px;
-  }
-
+      width: 100%;
+    }
   }
   @media screen and (max-width:768px){
-    .col-1{
-      padding-top: 60px;
-      line-height: 50px;
-      padding-left: 40px;
+    .body{
+       overflow-x: hidden !important;
+       margin: 0;
+       padding: 0;
     }
-    .feeds-link{
-      font-size: 18px;
+    .blog-article{
+      margin: 0;
+    }
+    img{
+      width: 98%;
+    }
+    p{
+      width: 80%;
+    }
+    h2{
+      width: 80%;
+
+    }
+    hr{
+      width: 300px;
+      margin-top: 10;
+      padding-left:0;
+    }
+    #retrieve-article{
+      text-align: center;
+      width: 414px;
+      align-items: center;
+    }
+    .column{
+      width: 414px;
     }
   }
+  @media screen and (max-width:414px){
+    .body{
+      overflow-x: hidden !important;
+      margin: 0;
+      padding: 0;
+   }
+   .blog-article{
+     margin: 0;
+   }
+   img{
+     width: 80%;
+   }
+   p{
+     width: 80%;
+   }
+   h2{
+     width: 80%;
 
+   }
+   hr{
+     width: 300px;
+     margin-top: 10;
+     padding-left:0;
+   }
+   #retrieve-article{
+    text-align: center;
+     width: 375px;
+     align-items: center;
+   }
+   .column{
+     width: 375px;
+   }
+   footer{
+    background-color: #90b8ac;
+    height: 780px;
+    margin: 0;
+    padding: 0;
+  }
+  }
   /* blog-details */
   
