@@ -93,6 +93,9 @@
       overflow-x: hidden !important;
       max-width: 100% !important;
   }
+  .column h1{
+    font-size: 17px;
+  }
  
  }
   @media screen and (max-width: 768px) {
@@ -444,7 +447,7 @@
  @media screen and (max-width: 768px) {
   .footer-content{
     padding-top: 10px;
-    margin: 30px 100px;
+    margin: 0;
     display: block;
   }
   .footer-header{
@@ -463,36 +466,13 @@ footer{
   background-color: #90b8ac;
   height: 680px;
 }
-.footer-header{
-  font-size: 72px;
-}
- }
- @media screen and (max-width: 768px) {
-  .footer-content{
-    padding-top: 10px;
-    margin: 30px 100px;
-    display: block;
-  }
-  .footer-header{
-    font-size: 102px;
-  }
-  .copyright{
-    text-align: center;
-    color: grey;
-}
-.social-media{
-  width: 40px;
-  height: 40px;
+#address{
+  margin:0;
+  font-size: 20px;
 }
 
-footer{
-  background-color: #90b8ac;
-  height: 780px;
-}
-.footer-header{
-  font-size: 72px;
-}
  }
+ 
  
  /* responsive navigation*/
  
@@ -549,7 +529,5 @@ footer{
   .row{
     flex-direction: column;
   }
-  #title-img{
-    width: 300px;
-  }
+  
 }
